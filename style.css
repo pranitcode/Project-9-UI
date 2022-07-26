@@ -1,15 +1,342 @@
 /* POPPINS FONT FAMILY */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Indie+Flower&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+  --blue:#4617fe;
+  --white:#fff;
+  --black:#000;
+  --whb:#dcd3ff
+}
 
 * {
   font-family: "Poppins", sans-serif;
   margin: 0;
   outline: 0;
   padding: 0 ;
+  box-sizing: border-box;
+}
+
+/* nav area........................................................................ */
+
+header {
+background-color:var(--blue);
+display:flex;
+justify-content:space-between;
+height: 50vh;
+padding:1rem 3rem;
+position: relative;
+}
+nav {
+  display:flex;
+  justify-content: flex-end;
+  order: 2;
+}
+ nav a, svg {
+  color: #dcd3ff;
+  margin: 1rem;
+}
+.nav-item-active { 
+  display:block;
+  background: var(--white);
+  color:#b6a4fe;
+  padding-top:8px;
+  text-align:center;
+  border-radius: 4px;
+  width: 115px;
+  height:40px;
+  font-weight:bold;
+  margin-top:8px;
+ } 
+nav svg {
+  width: 70px;
+  height: 20px;
+}
+.header-image {
+  position: absolute;
+  top: 6rem;
+  left: 83.5rem;
+}
+
+.header-text {
+  position: absolute;
+  top: 10rem;
+}
+.header-text h2 {
+  font-size:2.6rem;
+  color: var(--white);
+  font-weight:550;
+}
+
+.header-text p {
+  color: var(--white);
+  font-size: 18px;
 }
 
 
-/* nav area */
 
 
+/* companies area ....................................................................... */
+.companies {
+  display:flex;
+  justify-content:space-around;
+  width: 70%;
+  background-color:#f8f8fa;
+
+}
+.companies a {
+  text-decoration: none;
+  color:var(--black);
+  font-weight: bold;
+  font-size:22px;
+  padding: 30px;
+}
+
+/* api .............................................area */
+.api {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-evenly;
+  gap: 6rem;
+  background-color:#f8f8fa;
+ }
+.card-next {
+  align-items:center;
+  display: flex;
+  justify-content:flex-end;
+  align-items:center;
+  width: 140px;
+  align-items:center; 
+}
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  gap:2rem;
+  padding-left:8rem;
+}
+.icon-box {
+  background-color: var(--blue);
+  border-radius:50%;
+  padding:2rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items:center;
+  align-items: center;
+}
+.i-next {
+  color: #ffff;
+}
+.api-heading {
+  font-size:2.1rem;
+  font-weight:bold;
+  padding-left:7rem;
+  padding-top: 6rem;
+}
+
+.card-active, .card:hover  {
+  padding: 1rem 1rem;
+  background-color:var(--white);
+  height:14rem;
+  border-radius: 12px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.card {
+  padding: 1rem 1rem;
+  background-color:#f8f8fa;
+  height:14rem;
+}
+.card-active h3 {
+  color: var(--blue);
+}
+
+/* blog area ......................................*/
+.blog-heading {
+background-color: #f8f8fa;
+padding:4rem 0 4rem 6rem;
+
+}
+.blog-image img {
+  width: 290px;
+  position:absolute;
+  right: 25rem;
+}
+
+.blog-card {
+  display: flex;
+  justify-content: space-around;
+  gap: 6rem;
+  background-color: #ffff;
+  border-radius: 15% 2% 2% 0;
+  height:330px;
+  width:35%;
+  position: relative;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.blog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 1rem 2rem 0rem; 
+}
+.blog-bottom {
+  position: absolute;
+  top: 19rem;
+  left:21rem;
+}
+
+.blog-author {
+  position: absolute;
+  top: 9.5rem;
+  left: 13rem;
+  width: 125px;
+}
+.blog-cards {
+  display:flex;
+  justify-content:space-around;
+background-color: #f8f8fa;
+height: 50vh;
+}
+
+
+
+/* faq area........................................ .......................................*/
+.faq-section {
+  display: flex;
+  justify-content:space-between;
+  padding:2rem 0 0 6rem;
+  background-color: var(--whb);
+}
+
+.faq-section .faq-image {
+  align-self: flex-end;
+  display: flex;
+  position: absolute;
+  right: 0;
+  height: 400px;
+ }
+
+ .faq-section {
+  height:400px;
+ }
+
+.faq-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+justify-content: flex-start;
+/* height:100px; */
+}
+.faq-content h2 {
+font-weight: bold;
+font-size:2rem;
+font-family: 'Poppins';
+}
+.faq-content .hf  {
+  color:rgb(112, 112, 112);
+  /* font-size: 1.5rem; */
+  font-weight: normal
+}
+
+.faq-content button {
+  padding:1rem 2rem;
+  border: none;
+  color: var(--white);
+  background-color: var(--blue);
+  width: 150px;
+  border-radius: 3px;
+}
+
+/* downlod area ..............................................*/
+.download-section {
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  height: 200px;
+  width: 100%;
+  padding:8rem 1rem 8rem 6rem;
+
+}
+.download-content span {
+font-weight: 300;
+}
+
+.download-email input {
+  outline:none;
+  border: none;
+  border-radius:25px;
+  background-color:var(--whb);
+  padding: 1rem 14rem 1rem  3rem;
+  width: 40rem;
+}
+.download-email button {
+border: none;
+border-radius:25px;
+padding: .7rem 3rem;
+background-color: var(--blue);
+color: var(--white);
+position:relative;
+z-index: 1;
+right: 11rem;
+}
+
+/* footer area ....................................*/
+
+.footer-section {
+  display: flex;
+  justify-content:space-between;
+  background-color:var(--blue);
+  height:300px;
+  align-items:center;
+  padding:8rem 5rem 8rem 5rem;
+  width: 100%;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction:column;
+}
+.footer-logo {
+  width: 80px;
+  height: 30px;
+  margin-left:20px;
+}
+
+.footer-left .list {
+display: flex;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction:column;
+  
+}
+.footer-logos {
+width:50px;
+height:45px;
+padding:6px;
+}
+.logos-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content:space-around;
+
+}
+.list-items  {
+  list-style-type:none;
+  padding:1rem;
+  color:var(--white);
+}
+
+.footer-section .footer-left .list .list-items ~ .list-items:not(:last-of-type)::after {
+  content: "";
+  width: 1px;
+  height: 50%;
+  margin-left: 20px;
+  display: inline-block;
+  background-color: #FFFFFF;
+}
+
+/* https://www.geeksforgeeks.org/css-notlast-childafter-selector/ */
