@@ -24,12 +24,13 @@ display:flex;
 justify-content:space-between;
 height: 50vh;
 padding:1rem 3rem;
-position: relative;
+/* position: relative; */
 }
 nav {
   display:flex;
   justify-content: flex-end;
   order: 2;
+  
 }
  nav a, svg {
   color: #dcd3ff;
@@ -46,15 +47,25 @@ nav {
   height:40px;
   font-weight:bold;
   margin-top:8px;
- } 
+  
+ }
+ 
+ .mybar {
+
+display: none;
+
+ }
+
 nav svg {
   width: 70px;
   height: 20px;
 }
 .header-image {
   position: absolute;
-  top: 6rem;
-  left: 83.5rem;
+  right: 0;
+  height: 500px;
+  width: 600px;
+  top:110px;
 }
 
 .header-text {
@@ -73,14 +84,83 @@ nav svg {
 }
 
 
+@media only screen and (max-width:1230px) {
+ .header-image {
+    z-index: -1;
+    opacity: 0.5;
+    position: absolute;
+    width:300px;
+    height: 300px;
+    top:130px;
+  }
+  header {
+    z-index: 3;
+    opacity: 0.5;
+
+  }
+  nav {
+    display:flex;
+    justify-content: flex-end;
+    order: 2;
+    overflow-x: scroll;
+  }
+} 
+
+@media only screen and (max-width:900px) {
+.mybar {
+  display:block;
+  width: 60px;
+  height:60px;
+
+}
+nav {
+  display:none;
+}
+}
+
+@media only screen and (max-width:600px) {
+  .header-text {
+    position: absolute;
+    top: 10rem;
+  }
+  .header-text h2 {
+    font-size:1.3rem;
+    color: var(--white);
+    font-weight:550;
+  }
+  
+  .header-text p {
+    color: var(--white);
+    font-size: 15px;
+  }
+
+  header {
+    background-color:var(--blue);
+    display:flex;
+    justify-content:space-between;
+    height: 50vh;
+    padding:1rem 1.3rem;
+    /* position: relative; */
+    }
+
+    .logo {
+      width: 60px;
+      margin-top:1rem;
+    }
+    
+
+  
+}
 
 
 /* companies area ....................................................................... */
 .companies {
   display:flex;
-  justify-content:space-around;
-  width: 70%;
+  justify-content:flex-start;
+  width: 100%;
   background-color:#f8f8fa;
+  align-items:start;
+  gap:1rem;
 
 }
 .companies a {
@@ -91,6 +171,29 @@ nav svg {
   padding: 30px;
 }
 
+@media only screen and (max-width:600px) {
+  .companies a {
+    text-decoration: none;
+    color:var(--black);
+    font-weight: bold;
+    font-size:15px;
+    padding: 30px 0 0 10px;
+  } 
+  .companies {
+    display:flex;
+    justify-content:flex-start;
+    width: 100%;
+    background-color:#f8f8fa;
+    align-items:start;
+    gap:1rem;
+  
+  }
+}
+
+
+
+
+
 /* api .............................................area */
 .api {
   display: flex;
@@ -98,6 +201,7 @@ nav svg {
   justify-content:space-evenly;
   gap: 6rem;
   background-color:#f8f8fa;
+  padding-bottom:2rem;
  }
 .card-next {
   align-items:center;
@@ -150,53 +254,143 @@ nav svg {
   color: var(--blue);
 }
 
+
+@media only screen and (max-width: 1150px)  {
+
+  .api {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    gap: 6rem;
+    background-color:#f8f8fa;
+    padding-bottom:2rem;
+   }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    gap:2rem;
+    padding-left:0rem;
+    margin: 0 auto;
+  }
+
+  .api-heading {
+    font-size:2.1rem;
+    font-weight:bold;
+    padding-left:4rem;
+    padding-top: 6rem;
+  }
+
+  .card {
+    padding: 1rem 1rem;
+    background-color:#f8f8fa;
+    height:16rem;
+  }
+
+}
+
+
+
+
 /* blog area ......................................*/
-.blog-heading {
-background-color: #f8f8fa;
-padding:4rem 0 4rem 6rem;
 
-}
-.blog-image img {
-  width: 290px;
-  position:absolute;
-  right: 25rem;
+.blog-heading { 
+ max-width: 1700px; 
+ margin: 0 auto;
+ padding-left: 2rem;
 }
 
-.blog-card {
+.blog-cards { 
+  max-width:1380px;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-around;
-  gap: 6rem;
-  background-color: #ffff;
-  border-radius: 15% 2% 2% 0;
-  height:330px;
-  width:35%;
-  position: relative;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  flex-wrap: wrap;
+  height: auto;
 }
+
+
 .blog-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 2rem 1rem 2rem 0rem; 
+  margin-top: 20px;
 }
-.blog-bottom {
+.blog-card {
+  background-color: #FFFFFF;
+  display:flex;
+  height: 288px;
+  gap: 3rem;
+  margin: 4rem auto;
+  box-shadow: 10px 10px 10px 6px rgba(0,0,0,.04);
+  position: relative;
+}
+ .blog-card-bottom-image {
   position: absolute;
-  top: 19rem;
-  left:21rem;
+  bottom: 0;
+  right:12rem;
+  top: 16rem;
+ }
+
+.blog-image {
+  display: inline-block;
+}
+ div.blog-author {
+position: absolute;
+bottom: 0;
+right: 30px;
+
 }
 
-.blog-author {
-  position: absolute;
-  top: 9.5rem;
-  left: 13rem;
-  width: 125px;
-}
-.blog-cards {
-  display:flex;
-  justify-content:space-around;
-background-color: #f8f8fa;
-height: 50vh;
-}
+
+
+ 
+@media only screen and (max-width: 555px)  {
+  .blog-heading { 
+    max-width: 1700px; 
+    margin: 0 auto;
+    padding-left: 2rem;
+   }
+   
+   .blog-cards { 
+     max-width:1380px;
+     margin: 0 auto;
+     display: flex;
+     flex-wrap: wrap;
+     height: auto;
+   }
+   
+   
+   .blog-content {
+     margin-top: 20px;
+     padding-left: 20px;
+   }
+   .blog-card {
+     background-color: #FFFFFF;
+     display:flex;
+     height: 600px;
+     gap: 1rem;
+     flex-direction: column;
+     margin: 4rem auto;
+     box-shadow: 10px 10px 10px 6px rgba(0,0,0,.04);
+     position: relative;
+   }
+    .blog-card-bottom-image {
+     position: absolute;
+     bottom: 0;
+     right:12rem;
+     top: 35rem;
+    }
+   
+   .blog-image {
+     display: inline-block;
+   }
+    div.blog-author {
+   position: absolute;
+   bottom: 0;
+   right: 30px;
+   
+   }
+   
+  
+} 
 
 
 
@@ -245,6 +439,25 @@ font-family: 'Poppins';
   background-color: var(--blue);
   width: 150px;
   border-radius: 3px;
+  gap: 3rem;
+}
+
+
+@media only screen and (max-width: 1420px)  {
+
+.faq-section .faq-content {
+z-index: 3;
+}
+.faq-section .faq-image {
+    z-index: 1;
+     opacity: 0.1;
+}
+  .faq-section {
+    display: flex;
+    justify-content:space-between;
+    padding:1rem 0 0 2rem;
+    background-color: var(--whb);
+  }
 }
 
 /* downlod area ..............................................*/
@@ -252,10 +465,13 @@ font-family: 'Poppins';
   display: flex;
   justify-content:space-between;
   align-items:center;
-  height: 200px;
+  height: 300px;
   width: 100%;
-  padding:8rem 1rem 8rem 6rem;
+  gap: 4rem;
+  padding:3em 1rem 8rem 6rem;
+  /* background: #000; */
 
+flex-wrap: wrap;
 }
 .download-content span {
 font-weight: 300;
@@ -267,7 +483,8 @@ font-weight: 300;
   border-radius:25px;
   background-color:var(--whb);
   padding: 1rem 14rem 1rem  3rem;
-  width: 40rem;
+  width: 30rem;
+  /* display: flex; */
 }
 .download-email button {
 border: none;
@@ -280,6 +497,88 @@ z-index: 1;
 right: 11rem;
 }
 
+@media only screen and (max-width: 800px) {
+
+
+  .download-section {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: row;
+    max-width: 300px;
+    margin: 0 auto;
+    height: 300px;
+    width: 100%;
+    gap: 4rem;
+    padding:1rem 1rem 1rem 1rem;
+  flex-wrap: wrap;
+  }
+
+  
+  .download-email input {
+    outline:none;
+    border: none;
+    border-radius:25px;
+    background-color:var(--whb);
+    padding: 1rem 14rem 1rem  3rem;
+    width: 30rem;
+    /* display: flex; */
+  }
+  .download-email button {
+  border: none;
+  border-radius:25px;
+  padding: .4rem 2rem;
+  background-color: var(--blue);
+  color: var(--white);
+  position:relative;
+  z-index: 1;
+  right: 0;
+  left: 21rem;
+  bottom: 2.6rem;
+  }
+  
+}
+
+@media only screen and (max-width: 500px) {
+  .download-section {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: row;
+    max-width: 250px;
+    margin: 0 auto;
+    height: 300px;
+    width: 100%;
+    gap: 4rem;
+    padding:1rem 1rem 1rem 1rem;
+  flex-wrap: wrap;
+  }
+
+  
+  .download-email input {
+    outline:none;
+    border: none;
+    border-radius:25px;
+    background-color:var(--whb);
+    padding: 1rem 14rem 1rem  3rem;
+    width: 10rem;
+    /* display: flex; */
+  }
+  .download-email button {
+  border: none;
+  border-radius:25px;
+  padding: .4rem 1rem;
+  background-color: var(--blue);
+  color: var(--white);
+  position:relative;
+  z-index: 1;
+  right: 0;
+  left: 10rem;
+  bottom: 2.6rem;
+  }
+  
+}
+
 /* footer area ....................................*/
 
 .footer-section {
@@ -288,8 +587,9 @@ right: 11rem;
   background-color:var(--blue);
   height:300px;
   align-items:center;
-  padding:8rem 5rem 8rem 5rem;
+  padding: 0 1rem;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .footer-left {
@@ -319,7 +619,7 @@ padding:6px;
 .logos-list {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: .5rem;
   align-items: center;
   justify-content:space-around;
 
@@ -339,4 +639,32 @@ padding:6px;
   background-color: #FFFFFF;
 }
 
-/* https://www.geeksforgeeks.org/css-notlast-childafter-selector/ */
+
+
+@media only screen and (max-width: 570px) {
+
+  .logos-list {
+    display: flex;
+    flex-direction: row;
+    gap:2px;
+    align-items: center;
+    justify-content:space-around;
+     flex-wrap: wrap;
+  }
+  .list-items  {
+  list-style-type:none;
+  padding:.4rem;
+  color:var(--white);
+  font-size: 10px;
+}
+
+} 
+
+
+
+
+
+
+
+
+
